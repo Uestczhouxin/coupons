@@ -40,7 +40,8 @@ export default {
 		//#endif
 		//#ifdef MP-WEIXIN
 		let tabId = e.tabId ? parseInt(e.tabId) : 0
-		this.onSubscribe()
+		// 订阅推送，暂时关掉
+		// this.onSubscribe()
 		//#endif
 		for(let i in this.tabs){
 			if(tabId == this.tabs[i].tabId){
@@ -115,11 +116,6 @@ export default {
 					            });
 					        } else if (res.cancel) {
 					            console.log('用户点击取消');
-								wx.showToast({
-								  title: '订阅失败',
-								  image: '../../static/error.png',
-								  duration: 2000,
-								});
 					        }
 					    }
 					});
@@ -201,11 +197,6 @@ export default {
 										            });
 										        } else if (res.cancel) {
 										            console.log('用户点击取消');
-													wx.showToast({
-													  title: '订阅失败',
-													  image: '../../static/error.png',
-													  duration: 2000,
-													});
 										        }
 										    }
 										});
