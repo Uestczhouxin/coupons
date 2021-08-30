@@ -219,7 +219,7 @@ export default {
 			uni.showLoading({
 			    title: '获取优惠中'
 			});
-			if(index == 0){
+			if(this.tabs[index].tabId == 0){
 				this.couponList = this.coupons
 			}else{
 				for(let i in this.coupons){
@@ -260,7 +260,7 @@ export default {
 			uni.request({
 			    url: getApp().globalData.api.home,
 			    success: (res) => {
-			        this.tabs = res.data.data.tabs
+					this.tabs = res.data.data.tabs
 					this.coupons = res.data.data.coupons
 					this.changeTab(0)
 			    }

@@ -2,11 +2,11 @@ const db = uniCloud.database();
 
 var home = {
     tabs: () => {
-		let tabs = db.collection('tab').get();
+		let tabs = db.collection('tab').orderBy("sort", "asc").get();
 		return tabs
 	},
 	coupons: () => {
-		let coupons = db.collection('coupon').orderBy("sort", "desc").get();
+		let coupons = db.collection('coupon').orderBy("sort", "asc").get();
 		return coupons
 	},
 }
